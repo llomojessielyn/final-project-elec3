@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <main class="shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Pink Toolkit</p>
+                <h1>Weather Lookup</h1>
+                <p class="lede">Search any city, get live conditions, and flip between light and dark moods.</p>
+            </div>
+            <button class="pill ghost" id="theme-toggle" aria-label="Toggle theme">Switch to Dark</button>
+        </header>
+
+        <section class="panel">
+            <form id="search-form" class="search" autocomplete="off">
+                <input id="city" type="text" name="city" placeholder="Enter a city (e.g., Manila)" required>
+                <button type="submit" class="pill op" id="search-btn">Search</button>
+            </form>
+            <p class="hint">Powered by OpenWeather (requires network access).</p>
+        </section>
+
+        <section class="results" aria-live="polite">
+            <div class="card main" id="summary">
+                <div>
+                    <p class="eyebrow">Location</p>
+                    <h2 id="location">Waiting for a search…</h2>
+                    <p class="lede" id="description">Pick a city to see weather details.</p>
+                </div>
+                <div class="temp" id="temperature">--°C</div>
+            </div>
+
+            <div class="grid">
+                <div class="card" id="current">
+                    <p class="eyebrow">Now</p>
+                    <ul class="list" id="current-stats"></ul>
+                </div>
+                <div class="card" id="forecast">
+                    <p class="eyebrow">5-Day Forecast</p>
+                    <div class="forecast" id="forecast-stats"></div>
+                </div>
+            </div>
+
+            <div class="card message" id="message" hidden></div>
+        </section>
+    </main>
+    <footer class="panel footer" role="contentinfo" aria-label="Site footer">
+        <p class="hint">© 2025 Weather App • Purple theme • Jessielyn • Data by <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeather</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
