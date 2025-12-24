@@ -1,47 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Dog</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Dog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    <main class="shell">
-        <header class="hero">
-            <div>
-                <p class="eyebrow">Purple Toolkit</p>
-                <h1>Random Dog</h1>
-                <p class="lede">Get adorable random dog pictures and videos from the internet.</p>
-            </div>
-            <button class="pill ghost" id="theme-toggle" aria-label="Toggle theme">Switch to Dark</button>
-        </header>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
 
-        <section class="panel">
-            <div class="dog-container" id="dog-container">
-                <div class="loading" id="loading">
-                    <p>Loading a good doggo...</p>
-                </div>
-                <img id="dog-image" alt="Random dog" style="display: none;">
-                <video id="dog-video" controls loop style="display: none;">
-                    Your browser does not support the video tag.
-                </video>
+<main class="shell">
+    <header class="hero">
+        <div>
+            <h1>Random Dog</h1>
+            <p class="lede">Get adorable random dog pictures and videos from the internet.</p>
+        </div>
+        <div class="theme-buttons">
+            <button class="pill ghost" id="theme-toggle" aria-label="Toggle theme">Switch Theme</button>
+        </div>
+    </header>
+
+    <section class="panel">
+        <div class="controls-top">
+            <button class="pill op" id="new-dog-btn">Get New Dog</button>
+            <button class="pill ghost" id="load-more-btn">Load More</button>
+            <select id="filter-select" class="pill ghost">
+                <option value="all">All</option>
+                <option value="image">Images</option>
+                <option value="video">Videos</option>
+            </select>
+        </div>
+        <div class="dog-container" id="dog-container">
+            <div class="loading" id="loading">
+                <p>Loading a good doggo...</p>
             </div>
-            <div class="controls">
-                <button class="pill op" id="new-dog-btn">Get New Dog</button>
-                <button class="pill ghost" id="download-btn" style="display: none;">Download</button>
-            </div>
-            <p class="hint" id="error-message" style="display: none; color: var(--accent-strong);"></p>
-        </section>
-    </main>
-    <footer class="panel footer" role="contentinfo" aria-label="Site footer">
-        <p class="hint">© 2025 Random Dog • Purple theme • Jessielyn • Data by <a href="https://random.dog/" target="_blank" rel="noopener noreferrer">random.dog</a></p>
-    </footer>
-    <script src="script.js"></script>
+        </div>
+        <p class="hint" id="error-message" style="display: none; color: var(--accent-strong);"></p>
+    </section>
+
+    <section class="panel">
+        <h3>Favorites</h3>
+        <div class="controls-top">
+            <button class="pill op" id="download-favorites-btn">Download Favorites</button>
+            <select id="sort-favorites" class="pill ghost">
+                <option value="all">All</option>
+                <option value="image">Images</option>
+                <option value="video">Videos</option>
+            </select>
+        </div>
+        <div class="dog-container" id="favorites-container">
+            <p class="hint" id="no-favorites">No favorites yet!</p>
+        </div>
+    </section>
+</main>
+
+<footer class="panel footer" role="contentinfo" aria-label="Site footer">
+    <p class="hint">© 2025 Random Dog • Purple theme • Jessielyn • Data by <a href="https://random.dog/" target="_blank" rel="noopener noreferrer">random.dog</a></p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
